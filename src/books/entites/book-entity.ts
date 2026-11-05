@@ -24,7 +24,7 @@ export class Book {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column({ type: 'varchar', length: 255 })
   title: string;
 
   // ISBN tidak boleh sama

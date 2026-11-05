@@ -55,6 +55,23 @@ export class Order {
   })
   totalAmount: number;
 
+  // Snapshot alamat pengiriman saat checkout
+  // (perubahan customer_addresses tidak mengubah riwayat pesanan lama)
+  @Column({ name: 'shipping_recipient_name', type: 'varchar', length: 150 })
+  shippingRecipientName: string;
+
+  @Column({ name: 'shipping_phone', type: 'varchar', length: 20 })
+  shippingPhone: string;
+
+  @Column({ name: 'shipping_address', type: 'text' })
+  shippingAddress: string;
+
+  @Column({ name: 'shipping_city', type: 'varchar', length: 100 })
+  shippingCity: string;
+
+  @Column({ name: 'shipping_postal_code', type: 'varchar', length: 10 })
+  shippingPostalCode: string;
+
   @OneToMany(() => OrderItem, (item) => item.order)
   items: OrderItem[];
 

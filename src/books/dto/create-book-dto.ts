@@ -15,7 +15,7 @@ import {
 export class CreateBookDto {
   @IsNotEmpty({ message: 'Title harus diisi' })
   @IsString({ message: 'Title harus berupa teks' })
-  @MaxLength(30, { message: 'Title maksimal 30 karakter' })
+  @MaxLength(255, { message: 'Title maksimal 255 karakter' })
   readonly title: string;
 
   @IsNotEmpty({ message: 'ISBN harus diisi' })

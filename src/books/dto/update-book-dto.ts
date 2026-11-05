@@ -17,7 +17,7 @@ export class UpdateBookDto {
   @IsOptional()
   @IsNotEmpty({ message: 'Title tidak boleh kosong' })
   @IsString({ message: 'Title harus berupa teks' })
-  @MaxLength(30, { message: 'Title maksimal 30 karakter' })
+  @MaxLength(255, { message: 'Title maksimal 255 karakter' })
   readonly title?: string;
 
   @IsOptional()
